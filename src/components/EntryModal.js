@@ -29,7 +29,6 @@ export default function EntryModal({ entry, type, user }) {
    // State variables for modal status
 
    const [open, setOpen] = useState(false);
-
    const [name, setName] = useState(entry.name);
    const [link, setLink] = useState(entry.link);
    const [description, setDescription] = useState(entry.description);
@@ -64,6 +63,10 @@ export default function EntryModal({ entry, type, user }) {
       addEntry(newEntry).catch(console.error);
       handleClose();
    };
+
+   // TODO: Add Edit Mutation Handler
+
+   // TODO: Add Delete Mutation Handler
 
    // Button handlers for modal opening and inside-modal actions.
    // These buttons are displayed conditionally based on if adding or editing/opening.

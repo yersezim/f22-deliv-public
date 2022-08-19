@@ -21,3 +21,11 @@ export async function addEntry(entry) {
       userid: entry.userid,
    });
 }
+
+export async function updateEntry(entry) {
+    // TODO: Create Mutation to Edit Entry
+}
+
+export async function deleteEntry(entry) {
+    // TODO: Create Mutation to Delete Entry
+}
