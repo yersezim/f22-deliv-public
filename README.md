@@ -8,6 +8,8 @@ After cloning the repo, you should `cd` into the repo directory and run:
 
 to install all necessary packages.
 
+You may get a message like: `7 high severity vulnerabilities`. You can ignore this.
+
 ## Available Scripts
 
 In the project directory, you can run:
