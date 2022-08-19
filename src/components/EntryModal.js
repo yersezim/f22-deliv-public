@@ -28,6 +28,8 @@ export default function EntryModal({ entry, type, user }) {
 
    // State variables for modal status
 
+   // TODO: You may have to add another state variable 
+
    const [open, setOpen] = useState(false);
 
    const [name, setName] = useState(entry.name);
@@ -67,6 +69,7 @@ export default function EntryModal({ entry, type, user }) {
 
    // Button handlers for modal opening and inside-modal actions.
    // These buttons are displayed conditionally based on if adding or editing/opening.
+   // TODO: You may have to edit these to implement editing/deleting functionality.
 
    const openButton =
       type === "edit" ? <IconButton onClick={handleClickOpen}>
