@@ -28,7 +28,7 @@ export default function EntryModal({ entry, type, user }) {
 
    // State variables for modal status
 
-   // TODO: You may have to add another state variable 
+   // TODO: For editing, you may have to add and manage another state variable to check if the entry is being edited.
 
    const [open, setOpen] = useState(false);
    const [name, setName] = useState(entry.name);
@@ -72,7 +72,7 @@ export default function EntryModal({ entry, type, user }) {
 
    // Button handlers for modal opening and inside-modal actions.
    // These buttons are displayed conditionally based on if adding or editing/opening.
-   // TODO: You may have to edit these to implement editing/deleting functionality.
+   // TODO: You may have to edit these buttons to implement editing/deleting functionality.
 
    const openButton =
       type === "edit" ? <IconButton onClick={handleClickOpen}>
@@ -101,6 +101,7 @@ export default function EntryModal({ entry, type, user }) {
          <Dialog open={open} onClose={handleClose}>
             <DialogTitle>{type === "edit" ? name : "Add Entry"}</DialogTitle>
             <DialogContent>
+               {/* TODO: Feel free to change the properties of these components to implement editing functionality. The InputProps props class for these MUI components allows you to change their traditional CSS properties. */}
                <TextField
                   margin="normal"
                   id="name"
