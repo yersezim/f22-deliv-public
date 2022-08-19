@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-After cloning the repo, you should run:
+After cloning the repo, you should `cd` into the repo directory and run:
 
 ### `npm install`
 
