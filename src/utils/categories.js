@@ -1,4 +1,5 @@
 // List of options for entry categories
+// ! DO NOT CHANGE THIS
 
 export const categories = [
    { id: 0, name: "Default" },
