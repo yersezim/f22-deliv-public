@@ -18,7 +18,7 @@ import firebase from 'firebase/compat/app';
 import { collection, onSnapshot, query, where } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import './App.css';
-import BasicTable from './components/BasicTable';
+import EntryTable from './components/EntryTable';
 import EntryModal from './components/EntryModal';
 import { mainListItems } from './components/listItems';
 import { db, SignInScreen } from './utils/firebase';
@@ -132,7 +132,7 @@ export default function App() {
             </Stack>
           </Grid>
           <Grid item xs={12}>
-            <BasicTable entries={entries} />
+            <EntryTable entries={entries} />
           </Grid>
         </Grid>
       )
