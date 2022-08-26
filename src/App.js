@@ -116,6 +116,8 @@ export default function App() {
     the page client-side after making an add/update/delete. The page will automatically
     sync with the database! */
     onSnapshot(q, (snapshot) => {
+      // Set Entries state variable to the current snapshot
+      // For each entry, appends the document ID as an object property along with the existing document data
       setEntries(snapshot.docs.map(doc => ({ ...doc.data(), id: doc.id })))
     })
   }, [currentUser]);
