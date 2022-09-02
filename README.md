@@ -1,6 +1,6 @@
 # T4SG F22 Application Deliverable
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). You can find an example live implementation [here](https://f22-deliv-public.vercel.app/).
 
 After cloning the repo, you should `cd` into the repo directory and run:
 
