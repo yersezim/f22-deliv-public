@@ -184,7 +184,7 @@ export default function App() {
                 display: isSignedIn ? 'inline' : 'none'
               }}
             >
-              Signed in as {firebase.auth().currentUser?.displayName}
+              Signed in as {firebase.auth().currentUser?.displayName ? firebase.auth().currentUser?.displayName : "GenericUser"}
             </Typography>
             <Button variant="contained" size="small"
               sx={{
