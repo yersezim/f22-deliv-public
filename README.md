@@ -10,6 +10,8 @@ to install all necessary packages.
 
 You may get a message like: `7 high severity vulnerabilities`. You can ignore this.
 
+If you get an `ERESOLVE` error mentioning an upstream dependency conflict, try `npm install --legacy-peer-deps`, and if that doesn't work, `npm install --force`.
+
 ## Available Scripts
 
 In the project directory, you can run:
