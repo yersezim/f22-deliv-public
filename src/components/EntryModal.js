@@ -13,7 +13,7 @@ import TextField from '@mui/material/TextField';
 import * as React from 'react';
 import { useState } from 'react';
 import { categories } from '../utils/categories';
-import { addEntry } from '../utils/mutations';
+import { addEntry, updateEntry, deleteEntry} from '../utils/mutations';
 
 // Modal component for individual entries.
 
@@ -35,6 +35,7 @@ export default function EntryModal({ entry, type, user }) {
    const [link, setLink] = useState(entry.link);
    const [description, setDescription] = useState(entry.description);
    const [category, setCategory] = React.useState(entry.category);
+   const [edit, setEdit] = useState(false);
 
    // Modal visibility handlers
 
@@ -48,6 +49,7 @@ export default function EntryModal({ entry, type, user }) {
 
    const handleClose = () => {
       setOpen(false);
+      setEdit(false);
    };
 
    // Mutation handlers
@@ -68,7 +70,26 @@ export default function EntryModal({ entry, type, user }) {
 
    // TODO: Add Edit Mutation Handler
 
+   const handleEdit = () => {
+      const newEdit = {
+         name: name,
+         link: link,
+         description: description,
+         category: category,
+         entryid: entry.id,
+      };
+
+      updateEntry(newEdit).catch(console.error);
+      setEdit(false)
+      handleClose();
+   };
+
+
    // TODO: Add Delete Mutation Handler
+   const handleDelete = () => {
+      deleteEntry({entryid: entry.id}).catch(console.error);
+      handleClose();
+   };
 
    // Button handlers for modal opening and inside-modal actions.
    // These buttons are displayed conditionally based on if adding or editing/opening.
@@ -87,6 +108,13 @@ export default function EntryModal({ entry, type, user }) {
       type === "edit" ?
          <DialogActions>
             <Button onClick={handleClose}>Cancel</Button>
+            <Button variant="contained" onClick={() => {setEdit(true)}}  sx={{
+                     display: edit === false ? 'inline' : 'none',
+                   }}>Edit</Button>
+            <Button variant="contained" onClick={handleEdit} sx={{
+                     display: edit !== false ? 'inline' : 'none',
+                   }} >Confirm</Button>
+            <Button variant="outlined" color="error" onClick={handleDelete}>Delete</Button>
          </DialogActions>
          : type === "add" ?
             <DialogActions>
